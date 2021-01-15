@@ -27,7 +27,7 @@
           {{orderDetails.countGoods}}
         </a-descriptions-item>
         <a-descriptions-item label="订单总价（元）">
-          {{orderDetails.priceDiscount / 100}}
+          {{orderDetails.moneyNeedPay / 100}}
         </a-descriptions-item>
         <!-- <a-descriptions-item label="优惠券抵扣（元）">
           {{orderDetails.couponDiscountPrice / 100 || 0}}
