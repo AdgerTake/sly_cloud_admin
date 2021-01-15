@@ -428,6 +428,7 @@ import { mapState, mapMutations } from 'vuex'
             this.addServiceData = res.map(item => {
               item.value = item.id
               item.label = item.name
+              item.disabled = item.status == 2
               return item
             })
           })
@@ -720,7 +721,7 @@ import { mapState, mapMutations } from 'vuex'
       },
       onCheckAllChange(e) {
         Object.assign(this, {
-          addServiceList: e.target.checked ? this.addServiceData.map(item => item.id) : [],
+          addServiceList: e.target.checked ? this.addServiceData.filter(item => !item.disabled).map(item => item.id) : [],
           indeterminate: false,
           checkAll: e.target.checked,
         })
